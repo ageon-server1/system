@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SSH Bot Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🖥️ SSH BOT GPT SYSTEM</h1>
+
+    <div class="mode-toggle">
+      <label class="switch">
+        <input type="checkbox" id="modeSwitch" />
+        <span class="slider"></span>
+      </label>
+      <span id="modeLabel">Light Mode</span>
+    </div>
+
+    <div class="tabs">
+      <button onclick="showTab('dashboard')">📊 Dashboard</button>
+      <button onclick="showTab('vps')">🧠 VPS</button>
+      <button onclick="showTab('task')">⚙️ Tasks</button>
+      <button onclick="showTab('keys')">🔑 Keys</button>
+      <button onclick="showTab('users')">👤 Users</button>
+    </div>
+
+    <div id="dashboard" class="tab-content active">
+      <h2>📊 Dashboard</h2>
+      <div id="statusOutput" class="terminal"></div>
+    </div>
+
+    <div id="vps" class="tab-content">
+      <h2>🧠 VPS Status</h2>
+      <ul id="vpsList"></ul>
+    </div>
+
+    <div id="task" class="tab-content">
+      <h2>⚙️ Run Task</h2>
+      <input id="ip" placeholder="Target IP" />
+      <input id="port" placeholder="Port" />
+      <input id="time" placeholder="Time (sec)" />
+      <button onclick="runTask()">Run Task</button>
+    </div>
+
+    <div id="keys" class="tab-content">
+      <h2>🔑 Key Generator</h2>
+      <input id="hours" placeholder="Hours" />
+      <input id="limit" placeholder="User Limit" />
+      <button onclick="generateKey()">Generate</button>
+      <pre id="keyOutput"></pre>
+    </div>
+
+    <div id="users" class="tab-content">
+      <h2>👤 User Logs</h2>
+      <pre id="userLog"></pre>
+    </div>
+  </div>
+
+  <script src="sim.js"></script>
+</body>
+</html>
